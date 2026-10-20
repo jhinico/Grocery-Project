@@ -35,7 +35,8 @@ class Inventory {
                     continue;
                 }
                 if (!Double.isFinite(p_price)) {
-System.out.println("Error: Please Enter A Valid Finite Price");
+                    System.out.println("Error: Please Enter A Valid Finite Price");
+                    continue;
                 }
                 break;
             } catch (NumberFormatException e) {
@@ -249,14 +250,5 @@ System.out.println("Error: Please Enter A Valid Finite Price");
             index = index_Handler();
         }
         return product_list.get(index);
-    }
-
-    public int productID_Increment() {
-        int product_id = 0;
-
-        for (product_id = 1; product_id > product_list.size(); product_id++) {
-            
-        }
-        return product_id;
     }
 }

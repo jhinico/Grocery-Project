@@ -6,6 +6,7 @@ class ShoppingCart {
     public void addToCart(Inventory inventory, int index) {
         boolean inventoryChecker = Logic_Gate.inventory.product_list_StockChecker();
         boolean loop = true;
+        boolean loop1 = true;
         int amount = 0;
 
 
@@ -13,7 +14,7 @@ class ShoppingCart {
 
             Logic_Gate.inventory.display_inventory();
 
-            while (true) {
+            while (loop == true) {
                 System.out.print("Type The Index Of Selected Item To Add To Cart: ");
                 Product selectedProduct = Logic_Gate.inventory.getProduct();
 
@@ -22,7 +23,7 @@ class ShoppingCart {
                     System.out.println("Error: The Product Selected Has No Stock");
                 } else if (blocker == 1) {
                     System.out.println("The Chosen Product Is Already In Cart");
-                    while (loop == true) {
+                    while (loop1 == true) {
                         System.out.print("Want To Change Amount? Y/N: ");
                         String input = Logic_Gate.scan.nextLine();
                         System.out.println();
@@ -36,8 +37,8 @@ class ShoppingCart {
                                 break;
 
                             case "n", "no":
-                                Logic_Gate.customer.customer_Flow();
                                 loop = false;
+                                loop1 = false;
                                 break;
 
                             default:
