@@ -22,7 +22,7 @@ class Manager_Admin {
                     break;
 
                 case "2": case "remove":
-                    Logic_Gate.inventory.removeProduct();
+                    Logic_Gate.store_state.productRemoval_Blocker();
                     break;
 
                 case "3": case "change":

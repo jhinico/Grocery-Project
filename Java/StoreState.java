@@ -30,6 +30,14 @@ class StoreState {
             }
         }
     }
+    
+    public void productRemoval_Blocker() {
+        if (storeState == true) {
+            System.out.println("Error: Cannot Remove Poducts While Store Is Open\n");
+        } else {
+            Logic_Gate.inventory.removeProduct();
+        }
+    }
 
     public void store_close() {
         if (storeState == true) {
@@ -54,14 +62,6 @@ class StoreState {
             Logic_Gate.customer.customer_Flow();
         } else {
             System.out.println("Store Is Still Closed\n");
-        }
-    }
-
-    public void productRemoval_Blocker() {
-        if (storeState == true) {
-            System.out.println("Error: Cannot Remove Poducts While Store Is Open\n");
-        } else {
-            Logic_Gate.inventory.removeProduct();
         }
     }
 }
