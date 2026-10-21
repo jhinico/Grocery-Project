@@ -56,4 +56,12 @@ class StoreState {
             System.out.println("Store Is Still Closed\n");
         }
     }
+
+    public void productRemoval_Blocker() {
+        if (storeState == true) {
+            System.out.println("Error: Cannot Remove Poducts While Store Is Open\n");
+        } else {
+            Logic_Gate.inventory.removeProduct();
+        }
+    }
 }
